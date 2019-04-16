@@ -19,14 +19,16 @@ dependencies {
         exclude group: 'org.openjfx', module: 'javafx-web'
         exclude group: 'org.openjfx', module: 'javafx-media'
     }
+    implementation files('lib/scenicview.jar')
 
 
 }
 
 javafx {
-    modules = ['javafx.controls','javafx.web','javafx.media','javafx.fxml']
+    modules = ['javafx.controls','javafx.web','javafx.media','javafx.fxml','javafx.swing']
     version = '12'
 }
 
-
+sourceCompatibility = JavaVersion.VERSION_12
+targetCompatibility = JavaVersion.VERSION_12
 mainClassName = 'com.marsdev.javafx.samples.controlsfx.ControlsFXApp'

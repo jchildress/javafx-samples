@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.controlsfx.tools.Borders;
+import org.scenicview.ScenicView;
 
 public class ControlsFXApp extends Application {
 
@@ -41,6 +42,8 @@ public class ControlsFXApp extends Application {
         Scene scene = new Scene(vBox, 640, 480);
         stage.setScene(scene);
         stage.show();
+
+        ScenicView.show(scene);
     }
 
     public static void main(String[] args) {
