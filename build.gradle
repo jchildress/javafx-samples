@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url = "https://oss.sonatype.org/content/repositories/staging/"
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    implementation ('org.controlsfx:controlsfx:11.0.0' ) {
+        exclude group: 'org.openjfx', module: 'javafx-fxml'
+        exclude group: 'org.openjfx', module: 'javafx-web'
+        exclude group: 'org.openjfx', module: 'javafx-media'
+    }
+
+
+}
+
+javafx {
+    modules = ['javafx.controls','javafx.web','javafx.media','javafx.fxml']
+    version = '12'
+}
+
+
+mainClassName = 'com.marsdev.javafx.samples.controlsfx.ControlsFXApp'
