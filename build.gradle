@@ -25,10 +25,24 @@ dependencies {
 }
 
 javafx {
-    modules = ['javafx.controls','javafx.web','javafx.media','javafx.fxml','javafx.swing']
+    modules = ['javafx.controls','javafx.web','javafx.media','javafx.fxml','javafx.swing','javafx.graphics']
     version = '12'
 }
 
 sourceCompatibility = JavaVersion.VERSION_12
 targetCompatibility = JavaVersion.VERSION_12
-mainClassName = 'com.marsdev.javafx.samples.controlsfx.ControlsFXApp'
+mainClassName = 'com.marsdev.javafx.samples.controlsfx.HelloListSelectionView'
+
+application {
+    applicationDefaultJvmArgs =  [
+            "--add-opens=javafx.base/com.sun.javafx.runtime=org.controlsfx.controls",
+            "--add-opens=javafx.base/com.sun.javafx.collections=org.controlsfx.controls",
+            "--add-opens=javafx.graphics/com.sun.javafx.css=org.controlsfx.controls",
+            "--add-opens=javafx.graphics/com.sun.javafx.scene=org.controlsfx.controls",
+            "--add-opens=javafx.graphics/com.sun.javafx.scene.traversal=org.controlsfx.controls",
+            "--add-opens=javafx.graphics/javafx.scene=org.controlsfx.controls",
+            "--add-opens=javafx.controls/com.sun.javafx.scene.control=org.controlsfx.controls",
+            "--add-opens=javafx.controls/com.sun.javafx.scene.control.behavior=org.controlsfx.controls",
+            "--add-opens=javafx.controls/javafx.scene.control.skin=org.controlsfx.controls"
+    ]
+}
